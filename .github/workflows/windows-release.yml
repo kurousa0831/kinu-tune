@@ -39,8 +39,7 @@ jobs:
       # does) and the CPU build of ONNX Runtime; DirectML is the Windows
       # default in CMakeLists.txt, so turn it off explicitly.
       - name: Configure
-        run: cmake -B build -DUSE_DIRECTML=ON
--DUSE_BUNDLED_DIRECTML_RUNTIME=ON -DPITCHNET_DEV_BUILD=OFF -DPITCHNET_ARA_DIAGNOSTICS=OFF -DPITCHNET_BUILD_TESTS=OFF
+        run: cmake -B build -DUSE_DIRECTML=ON -DUSE_BUNDLED_DIRECTML_RUNTIME=ON -DPITCHNET_DEV_BUILD=OFF -DPITCHNET_ARA_DIAGNOSTICS=OFF -DPITCHNET_BUILD_TESTS=OFF
 
       - name: Build the VST3
         run: cmake --build build --config Release --target PitchNetPlugin_VST3 --parallel
